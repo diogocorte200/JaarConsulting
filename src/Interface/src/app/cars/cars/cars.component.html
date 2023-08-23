@@ -1,0 +1,28 @@
+<main class="container mt-5">
+  <section id="search-mode-area" class="d-flex flex-row w-100 px-2">
+    <app-search-mode-form
+      (searchModeChangeEventEmitter)="searchModeChangeEvent($event)">
+    </app-search-mode-form>
+
+    <div *ngIf="isFipeSearchMode" id="search-by-fipe" class="px-2 w-75">
+      <app-search-fipe-form
+        (searchByFipeEmitter)="searchByFipe($event)"
+        class="w-100">
+      </app-search-fipe-form>
+    </div>
+
+    <div *ngIf="isPlacaSearchMode" id="search-by-placa" class="px-2 w-75">
+      <app-search-placa-form
+        (searchByPlacaEmitter)="searchByPlaca($event)">
+      </app-search-placa-form>
+    </div>
+  </section>
+
+  <section *ngIf="hasCarInfos">
+    <app-search-result-displayer
+      [isFipeSearchMode]="isFipeSearchMode"
+      [carList]="carsInfo"
+      (saveDataEmitter)="saveCarDetails($event)">
+    </app-search-result-displayer>
+  </section>
+</main>

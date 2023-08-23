@@ -1,0 +1,29 @@
+<form [formGroup]="searchByFipeForm" class="d-flex flex-row align-items-center w-100">
+  <mat-form-field class="w-50 pe-2" appearance="outline">
+    <mat-label>Código fipe</mat-label>
+    <input
+      matInput
+      formControlName="fipeCode"
+      placeholder="Digite o código fipe"
+    />
+  </mat-form-field>
+
+  <mat-form-field class="px-2 w-50" appearance="outline">
+    <mat-label>Ano do Veículo</mat-label>
+    <input
+      matInput
+      formControlName="anoVeiculo"
+      placeholder="Digite o ano do veículo"
+    />
+  </mat-form-field>
+
+  <button
+    mat-raised-button
+    color="primary"
+    [disabled]="!searchByFipeForm.valid"
+    (click)="searchByFipeCode()"
+    class="mb-2r"
+  >
+    Pesquisar
+  </button>
+</form>

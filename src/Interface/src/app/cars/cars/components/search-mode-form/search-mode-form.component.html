@@ -1,0 +1,15 @@
+<form [formGroup]="searchForm" class="d-flex flex-row w-100">
+  <mat-form-field appearance="outline" class="w-100">
+    <mat-label>Buscar por</mat-label>
+    <mat-select
+      formControlName="searchMode"
+      name="searchMode"
+      (selectionChange)="reset()">
+      <mat-option
+        *ngFor="let searchMode of searchModeOptions"
+        [value]="searchMode.value">
+        {{ searchMode.key }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</form>

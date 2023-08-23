@@ -1,0 +1,20 @@
+<section class="add-placa-area">
+  <app-car-data-displayer [car]="car"></app-car-data-displayer>
+  <form [formGroup]="addPlacaForm">
+    <mat-form-field class="example-full-width" appearance="outline">
+      <mat-label>Placa</mat-label>
+      <input matInput formControlName="placa" placeholder="Digite a placa" />
+    </mat-form-field>
+    <button
+      mat-raised-button
+      color="accent"
+      [disabled]="!addPlacaForm.valid"
+      (click)="addPlacaToCarsInfo()"
+      class="ms-3">
+      Adicionar Placa
+    </button>
+  </form>
+  <div class="d-flex flex-row ml-5r mb-4">
+    <hr class="text-center w-75" />
+  </div>
+</section>

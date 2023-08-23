@@ -1,0 +1,53 @@
+<section class="add-placa-area">
+  <div id="car-data_second-row" class="row w-100">
+    <mat-form-field appearance="outline" class="col-2">
+      <mat-label>Modelo</mat-label>
+      <input matInput readonly [value]="car.modelo">
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="col-1">
+      <mat-label>Marca</mat-label>
+      <input matInput readonly [value]="car.marca">
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="col-2">
+      <mat-label>Valor</mat-label>
+      <input matInput readonly [value]="car.valor">
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="col-2">
+      <mat-label>Código FIPE</mat-label>
+      <input matInput readonly [value]="car.codigoFipe">
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="col-1">
+      <mat-label>Sigla do Combustível</mat-label>
+      <input matInput readonly [value]="car.siglaCombustivel">
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="col-2">
+      <mat-label>Combustivel</mat-label>
+      <input matInput readonly [value]="car.combustivel">
+    </mat-form-field>
+  </div>
+
+  <div id="car-data_second-row" class="row w-100">
+    <mat-form-field appearance="outline" class="col-2">
+      <mat-label>Mês de Referência</mat-label>
+      <input matInput readonly [value]="car.mesReferencia">
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="col-2">
+      <mat-label>Tipo do Veículo</mat-label>
+      <input matInput readonly [value]="car.tipoVeiculo">
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="col-2">
+      <mat-label>Ano</mat-label>
+      <input matInput readonly [value]="car.anoModelo">
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="col-4">
+      <mat-label>Data da Consulta</mat-label>
+      <input matInput readonly [value]="car.dataConsulta">
+    </mat-form-field>
+  </div>
+  <div class="row w-100" *ngIf="!!readOnlyMode" >
+    <mat-form-field appearance="outline" class="col-2">
+      <mat-label>Placa</mat-label>
+      <input matInput [readonly]="readOnlyMode" [value]="car.placa">
+    </mat-form-field>
+  </div>
+</section>

@@ -1,0 +1,26 @@
+<section *ngIf="isFipeSearchMode">
+  <h2 id="title">Dados do Veículo</h2>
+
+  <app-car-list-data-displayer
+    *ngFor="let car of carList; let index = index"
+    [car]="car"
+    [index]="index"
+    (addPlacaToCarInfo)="updateCarList($event)">
+  </app-car-list-data-displayer>
+
+  <div>
+    <button
+      mat-raised-button
+      color="primary"
+      [disabled]="!allPlacasInserted"
+      (click)="saveCarDetails()">
+      Salvar
+    </button>
+  </div>
+</section>
+
+<section *ngIf="!isFipeSearchMode">
+  <h2 id="title">Dados do Veículo</h2>
+  <app-car-data-displayer [car]="carList[0]" [readOnlyMode]="true"></app-car-data-displayer>
+</section>
+

@@ -1,0 +1,20 @@
+<form
+  [formGroup]="searchByPlacaForm"
+  class="d-flex flex-row align-items-center w-100">
+  <mat-form-field class="pe-2 w-75" appearance="outline">
+    <mat-label>Placa</mat-label>
+    <input
+      matInput
+      formControlName="placa"
+      placeholder="Digite a placa do veículo"/>
+  </mat-form-field>
+
+  <button
+    mat-raised-button
+    color="primary"
+    [disabled]="!searchByPlacaForm.valid"
+    (click)="searchByPlacaCode()"
+    class="mb-2r">
+    Pesquisar
+  </button>
+</form>
